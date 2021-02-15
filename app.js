@@ -123,7 +123,7 @@ function showImageList() {
 }
 
 sliderBtn.addEventListener('click', function () {
-  createSlider()
+  createSlider();
 })
 
 // Search with enter key
