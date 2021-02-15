@@ -113,14 +113,21 @@ const changeSlide = (index) => {
   items[index].style.display = "block"
 }
 
-searchBtn.addEventListener('click', function () {
+searchBtn.addEventListener('click', showImageList)
+function showImageList() {
   document.querySelector('.main').style.display = 'none';
   clearInterval(timer);
   const search = document.getElementById('search');
   getImages(search.value)
   sliders.length = 0;
-})
+}
 
 sliderBtn.addEventListener('click', function () {
   createSlider()
+})
+
+// Search with enter key
+document.getElementById('search').addEventListener('keypress', function(e){
+  if(e.key === 'Enter')
+    showImageList();
 })
